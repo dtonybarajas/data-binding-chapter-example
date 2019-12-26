@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.example.databinding.model.User" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.WithDataBindingActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_title_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.271"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:text="@{model.name ?? model.company}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_title_name"
+            app:layout_constraintStart_toEndOf="@+id/textView_title_name"
+            app:layout_constraintTop_toTopOf="@+id/textView_title_name"
+            tools:text="Tony Barajas" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_title_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Age:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.258"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_title_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            android:text="@{Integer.toString(model.age)}"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_title_age"
+            app:layout_constraintStart_toEndOf="@+id/textView_title_age"
+            app:layout_constraintTop_toTopOf="@+id/textView_title_age"
+            tools:text="100" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_title_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Company:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.299"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_title_age" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{model.company}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_title_company"
+            app:layout_constraintStart_toEndOf="@+id/textView_title_company"
+            app:layout_constraintTop_toTopOf="@+id/textView_title_company"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="MUY" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_title_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Address:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.289"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_title_company" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@{model.address}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_title_address"
+            app:layout_constraintStart_toEndOf="@+id/textView_title_address"
+            app:layout_constraintTop_toTopOf="@+id/textView_title_address"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="Cedritos" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_title_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Phone:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.263"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_title_address" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textView_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@{model.phone}"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_title_phone"
+            app:layout_constraintStart_toEndOf="@+id/textView_title_phone"
+            app:layout_constraintTop_toTopOf="@+id/textView_title_phone"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="123456789" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
